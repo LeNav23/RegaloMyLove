@@ -1,0 +1,1038 @@
+#fondo-quiz {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        /* Textura de arena más visible */
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 1px,
+            rgba(210, 180, 140, 0.15) 1px,
+            rgba(210, 180, 140, 0.15) 2px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 1px,
+            rgba(222, 184, 135, 0.15) 1px,
+            rgba(222, 184, 135, 0.15) 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(245, 222, 179, 0.08) 3px,
+            rgba(245, 222, 179, 0.08) 4px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(210, 180, 140, 0.08) 3px,
+            rgba(210, 180, 140, 0.08) 4px
+        ),
+        /* Granos de arena (puntos pequeños) */
+        radial-gradient(circle at 10% 15%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 25% 8%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 15% 25%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 35% 12%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 8% 35%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 45% 20%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 22% 40%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 55% 5%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 65% 18%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 42% 35%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 75% 12%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 85% 25%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 70% 8%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 92% 15%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 58% 28%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        /* Manchas más grandes para variación */
+        radial-gradient(circle at 20% 30%, rgba(245, 222, 179, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 25%, rgba(222, 184, 135, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 40% 15%, rgba(210, 180, 140, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 60% 35%, rgba(245, 222, 179, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 30% 45%, rgba(222, 184, 135, 0.2) 0%, transparent 40%),
+        /* Textura de espuma/encuentro arena-mar (70%-75% zona de transición) */
+        radial-gradient(circle at 5% 71%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 12% 72%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 18% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 25% 71.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 32% 70.5%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 38% 72%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 45% 71%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 52% 70.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 58% 72%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 65% 71%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 71% 70.5%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 85% 71%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 92% 71.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 97% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 8% 73%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 15% 73.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 22% 73%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 29% 73.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 36% 73%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 43% 73.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 50% 73%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 57% 73.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 64% 73%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 70% 73.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 77% 73%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 84% 73.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 91% 73%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 95% 73.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        /* Gradiente de arena a mar - más arena, menos mar */
+        linear-gradient(180deg, 
+            #f5deb3 0%,
+            #f4e4c1 20%,
+            #ffe4c4 40%,
+            #f0d9b5 55%,
+            #e8d5b7 70%,
+            #4db8e8 85%,
+            #2596be 92%,
+            #1a7a9e 100%
+        );
+    background-size: 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%;
+    z-index: -1;
+    overflow: hidden;
+    /* Añadir noise filter para efecto más realista */
+    filter: contrast(1.05) brightness(0.98);
+}
+
+/* Animated waves overlay */
+#fondo-quiz::before,
+#fondo-quiz::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    bottom: -50%;
+    left: -50%;
+    background: transparent;
+    border-radius: 45%;
+}
+
+#fondo-quiz::before {
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 70%);
+    animation: wave 15s linear infinite;
+}
+
+#fondo-quiz::after {
+    background: radial-gradient(ellipse, rgba(135, 206, 235, 0.2) 0%, rgba(70, 180, 220, 0.15) 40%, transparent 70%);
+    animation: wave 20s linear infinite reverse;
+    animation-delay: -5s;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Intro message before quiz */
+.intro-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    max-width: 700px;
+    padding: 3rem;
+    animation: fadeInScale 1s ease-out;
+}
+
+.intro-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #3B2F2F;
+    text-shadow: 2px 2px 10px rgba(122, 104, 79, 0.4);
+    text-align: center;
+    line-height: 1.6;
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.intro-message.fade-out {
+    animation: fadeOutScale 1s ease-in forwards;
+}
+
+@keyframes fadeOutScale {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+.quiz-container {
+    max-width: 850px;
+    margin: 2rem auto;
+    padding: 2.5rem 3rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: floatContainer 6s ease-in-out infinite;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #3B2F2F;
+    text-shadow: 2px 2px 10px rgba(122, 104, 79, 0.4);
+    margin-bottom: 1.5rem;
+    animation: titleShine 3s ease-in-out infinite;
+}
+
+@keyframes titleShine {
+    0%, 100% { text-shadow: 2px 2px 10px rgba(122, 104, 79, 0.4); }
+    50% { text-shadow: 2px 2px 20px rgba(122, 104, 79, 0.6), 0 0 30px rgba(139, 119, 101, 0.3); }
+}
+
+.subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #6D5F50;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+#question-text {
+    font-size: 1.5rem;
+    color: #3E3E3E;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.option-btn {
+    display: block;
+    width: 80%;
+    margin: 1.2rem auto;
+    padding: 1.1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    color: #4A4A4A;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-btn:hover {
+    background: #F5E5C0;
+    color: #2E2E2E;
+    transform: scale(1.02);
+    border-color: #F5E5C0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#next-btn {
+    margin-top: 2.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#next-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.feedback {
+    margin: 2rem 0;
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    animation: feedbackPop 0.5s ease-out;
+}
+
+@keyframes feedbackPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.correct {
+    background: rgba(46, 213, 115, 0.3);
+    color: #1a7a44;
+    font-weight: 600;
+}
+
+.incorrect {
+    background: rgba(255, 71, 87, 0.3);
+    color: #b32d3a;
+    font-weight: 600;
+}
+
+/* Continue button uses elegant-btn class, remove old styles */
+
+#final-message h2 {
+    display: none;
+}
+
+#final-message p {
+    color: #3E2723;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Beach items - appear in the sand area (top 70%) */
+.beach-items {
+    position: fixed;
+    width: 100%;
+    height: 70%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.beach-items span {
+    position: absolute;
+    font-size: 2rem;
+    animation: beachFloat 10s infinite ease-in-out;
+    opacity: 0;
+}
+
+.beach-items span:nth-child(1) { left: 8%; top: 15%; animation-delay: 0s; }
+.beach-items span:nth-child(2) { left: 85%; top: 10%; animation-delay: 1.5s; }
+.beach-items span:nth-child(3) { left: 12%; top: 60%; animation-delay: 3s; }
+.beach-items span:nth-child(4) { left: 88%; top: 58%; animation-delay: 4.5s; }
+
+/* Beach characters (PNGs) */
+.beach-character {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    animation: beachCharFloat 8s infinite ease-in-out;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Leo right image */
+.leo-right-image {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: auto;
+    z-index: 10;
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.4));
+    animation: leoFloat 4s ease-in-out infinite;
+    transition: all 1s ease-out;
+}
+
+.leo-right-image.grabbed {
+    animation: leoGrabbed 3s ease-in-out forwards;
+    z-index: 19;
+}
+
+/* Exclamation marks above Leo in arc formation */
+.exclamation-container {
+    position: fixed;
+    right: 5%;
+    top: 20%;
+    width: 200px;
+    height: 150px;
+    z-index: 15;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+}
+
+.exclamation-container.active {
+    display: block;
+    opacity: 1;
+}
+
+.exclamation {
+    position: absolute;
+    font-size: 4rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    opacity: 0;
+}
+
+.exclamation-container.active .exclamation {
+    animation: exclamationPop 0.3s ease-out forwards;
+}
+
+.exclamation-left {
+    left: 0;
+    top: 60px;
+}
+
+.exclamation-center {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.exclamation-right {
+    right: 0;
+    top: 60px;
+}
+
+.exclamation-container.active .exclamation-left {
+    animation-delay: 0s;
+}
+
+.exclamation-container.active .exclamation-center {
+    animation-delay: 0.1s;
+}
+
+.exclamation-container.active .exclamation-right {
+    animation-delay: 0.2s;
+}
+
+@keyframes exclamationPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes leoFloat {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(-10px); }
+}
+
+@keyframes leoGrabbed {
+    0% {
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    30% {
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    45% {
+        right: 5%;
+        top: 48%;
+        transform: translateY(-50%) rotate(-5deg) scale(0.98);
+        opacity: 1;
+    }
+    60% {
+        right: 5%;
+        top: 49%;
+        transform: translateY(-50%) rotate(-3deg) scale(0.96);
+        opacity: 1;
+    }
+    100% {
+        right: -250px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-25deg) scale(0.7);
+        opacity: 0;
+    }
+}
+
+/* Thief scene after continue button */
+.thief-scene {
+    position: fixed;
+    left: -500px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.thief-scene.active {
+    animation: thiefJourney 8s ease-in-out forwards;
+}
+
+.thief-character {
+    position: absolute;
+    width: 350px;
+    height: auto;
+    left: 0;
+    top: -150px;
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.4));
+}
+
+.leo-captured {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    left: 115px;
+    top: 80px;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+.dialogue-bubble {
+    position: absolute;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 20px;
+    padding: 20px 30px;
+    left: 380px;
+    top: -80px;
+    min-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.dialogue-bubble p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+.dialogue-bubble::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #333;
+}
+
+.dialogue-bubble::after {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 17px solid white;
+}
+
+@keyframes thiefJourney {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    15% {
+        left: -500px;
+        opacity: 1;
+    }
+    30% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    35% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    70% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    85% {
+        left: 120%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    100% {
+        left: 120%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+.thief-scene.active .dialogue-bubble {
+    animation: dialogueAppear 1s ease-out 3s forwards;
+}
+
+@keyframes dialogueAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Grabbing hand animation */
+.grabbing-hand {
+    position: fixed;
+    right: -300px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 350px;
+    height: auto;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.grabbing-hand.active {
+    animation: handGrab 3s ease-in-out forwards;
+}
+
+@keyframes handGrab {
+    0% {
+        right: -300px;
+        opacity: 0;
+        transform: translateY(-50%) rotate(0deg) scale(1);
+    }
+    30% {
+        right: 3%;
+        opacity: 1;
+        transform: translateY(-50%) rotate(-10deg) scale(1);
+    }
+    45% {
+        right: 5%;
+        opacity: 1;
+        transform: translateY(-50%) rotate(-5deg) scale(1.05);
+    }
+    60% {
+        right: 5%;
+        opacity: 1;
+        transform: translateY(-50%) rotate(-8deg) scale(0.95);
+    }
+    100% {
+        right: -350px;
+        opacity: 0;
+        transform: translateY(-50%) rotate(-25deg) scale(0.8);
+    }
+}
+
+.sebastian {
+    left: 75%;
+    top: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes beachFloat {
+    0%, 100% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
+    10% { opacity: 1; transform: translateY(-15px) rotate(5deg) scale(1); }
+    50% { opacity: 1; transform: translateY(-10px) rotate(-5deg) scale(1.1); }
+    90% { opacity: 1; transform: translateY(-15px) rotate(3deg) scale(1); }
+    100% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
+}
+
+@keyframes beachCharFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(3deg); }
+    50% { transform: translateY(-5px) rotate(-3deg); }
+    75% { transform: translateY(-8px) rotate(2deg); }
+}
+
+/* Ocean items - appear in the water area (bottom 30%) */
+.ocean-items {
+    position: fixed;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ocean-items span {
+    position: absolute;
+    font-size: 2rem;
+    animation: oceanFloat 12s infinite ease-in-out;
+    opacity: 0;
+}
+
+.ocean-items span:nth-child(1) { left: 10%; bottom: 18%; animation-delay: 0s; }
+.ocean-items span:nth-child(2) { left: 88%; bottom: 15%; animation-delay: 2s; }
+
+/* Remove emoji float animation - not needed anymore */
+
+/* Ocean characters (PNGs) */
+.ocean-character {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: oceanCharFloat 10s infinite ease-in-out;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.crush {
+    left: 25%;
+    bottom: 12%;
+    animation-delay: 1s;
+}
+
+.nemo {
+    left: 65%;
+    bottom: 20%;
+    width: 70px;
+    animation-delay: 3s;
+}
+
+@keyframes oceanCharFloat {
+    0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+    25% { transform: translateX(15px) translateY(-10px) rotate(5deg); }
+    50% { transform: translateX(-10px) translateY(-15px) rotate(-5deg); }
+    75% { transform: translateX(20px) translateY(-8px) rotate(3deg); }
+}
+
+/* Beach shells decoration */
+.beach-shells {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shell {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    background: linear-gradient(135deg, #f4e4c1 0%, #e8d5b7 50%, #d4c4a8 100%);
+    border-radius: 50% 50% 45% 45%;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.15), 0 3px 8px rgba(0, 0, 0, 0.2);
+    animation: shellFloat 15s infinite ease-in-out;
+}
+
+.shell::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 3px,
+        rgba(139, 119, 101, 0.2) 3px,
+        rgba(139, 119, 101, 0.2) 4px
+    );
+    border-radius: 50%;
+}
+
+.shell-1 { left: 12%; top: 25%; animation-delay: 0s; transform: rotate(25deg); }
+.shell-2 { left: 78%; top: 18%; animation-delay: 3s; transform: rotate(-15deg); }
+.shell-3 { left: 35%; top: 55%; animation-delay: 6s; transform: rotate(40deg); }
+.shell-4 { left: 85%; top: 48%; animation-delay: 9s; transform: rotate(-30deg); }
+.shell-5 { left: 8%; top: 62%; animation-delay: 12s; transform: rotate(15deg); }
+
+.starfish {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #f4a460 0%, #d4884f 100%);
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    animation: starfishFloat 18s infinite ease-in-out;
+}
+
+.starfish::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: rgba(139, 69, 19, 0.4);
+    border-radius: 50%;
+}
+
+.starfish-1 { left: 20%; top: 40%; animation-delay: 2s; transform: rotate(10deg); }
+.starfish-2 { left: 68%; top: 33%; animation-delay: 8s; transform: rotate(-25deg); }
+.starfish-3 { left: 45%; top: 65%; animation-delay: 14s; transform: rotate(35deg); }
+
+@keyframes shellFloat {
+    0%, 100% { transform: translateY(0) rotate(25deg); }
+    50% { transform: translateY(-10px) rotate(30deg); }
+}
+
+@keyframes starfishFloat {
+    0%, 100% { transform: translateY(0) rotate(10deg); }
+    50% { transform: translateY(-12px) rotate(15deg); }
+}
+
+/* The Little Mermaid Scene */
+.mermaid-scene {
+    position: fixed;
+    left: 5%;
+    bottom: 35%;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.rock {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(135deg, #8B7355 0%, #6B5345 50%, #5A4635 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 
+        inset -5px -5px 15px rgba(0, 0, 0, 0.3),
+        inset 5px 5px 10px rgba(139, 115, 85, 0.3),
+        3px 5px 10px rgba(0, 0, 0, 0.4);
+    animation: rockFloat 6s ease-in-out infinite;
+}
+
+.rock::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 30px;
+    height: 25px;
+    background: radial-gradient(circle, rgba(107, 83, 69, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.rock::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    width: 25px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(90, 70, 53, 0.7) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.mermaid {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+    animation: mermaidSway 4s ease-in-out infinite;
+}
+
+@keyframes rockFloat {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@keyframes mermaidSway {
+    0%, 100% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-50%) rotate(2deg); }
+    75% { transform: translateX(-50%) rotate(-2deg); }
+}
+
+.wave-effect {
+    animation: waveRipple 1s ease-out;
+}
+
+@keyframes waveRipple {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatContainer {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Custom seashell cursor */
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23F4E4D7" stroke="%238B7355" stroke-width="1.5"><path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.5 3.5 7.5L12 22l5.5-3.5C19.5 16.5 21 14 21 11c21 6 17 2 12 2z"/><path d="M12 6v10M9 8l6 6M9 14l6-6"/></svg>'), auto;
+}
+
+button, .option-btn {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23F4E4D7" stroke="%238B7355" stroke-width="1.5"><path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.5 3.5 7.5L12 22l5.5-3.5C19.5 16.5 21 14 21 11c21 6 17 2 12 2z"/><path d="M12 6v10M9 8l6 6M9 14l6-6"/></svg>'), pointer;
+}
+
+/* Animated background decorations */
+.background-waves {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.wave-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+}
+
+.wave1 {
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.3) 100%);
+    animation: waveMove1 12s linear infinite;
+    clip-path: ellipse(100% 100% at 50% 100%);
+}
+
+.wave2 {
+    background: linear-gradient(180deg, transparent 0%, rgba(145, 239, 246, 0.15) 50%, rgba(145, 239, 246, 0.25) 100%);
+    animation: waveMove2 18s linear infinite reverse;
+    clip-path: ellipse(100% 80% at 50% 100%);
+}
+
+.wave3 {
+    background: linear-gradient(180deg, transparent 0%, rgba(200, 237, 220, 0.1) 50%, rgba(200, 237, 220, 0.2) 100%);
+    animation: waveMove3 25s linear infinite;
+    clip-path: ellipse(100% 90% at 50% 100%);
+}
+
+@keyframes waveMove1 {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes waveMove2 {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-15px); }
+}
+
+@keyframes waveMove3 {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-50%) translateY(8px); }
+}
+#fondo-quiz::before,
+#fondo-quiz::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: floatBubbles 15s infinite ease-in-out;
+}
+
+#fondo-quiz::before {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+#fondo-quiz::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes floatBubbles {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, -50px) scale(1.1); }
+    50% { transform: translate(-30px, 30px) scale(0.9); }
+    75% { transform: translate(40px, 20px) scale(1.05); }
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Elegant button style from carousel */
+.elegant-btn {
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+    font-family: 'Poppins', sans-serif;
+    margin-top: 2rem;
+}
+
+.elegant-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(255, 107, 157, 0.5);
+}

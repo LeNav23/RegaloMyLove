@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvame :)</title>
+    <link rel="stylesheet" href="CSS/maze.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="fondo-maze">
+        <!-- Thief entrance animation -->
+        <div class="thief-entrance" id="thief-entrance">
+            <img src="imgs/thief.png" alt="Thief" class="thief-maze-character">
+            <img src="imgs/Leox5.png" alt="Leo captured" class="leo-maze-captured">
+        </div>
+
+        <!-- Contenedor del juego -->
+        <div id="game-container" class="active">
+            <div id="maze-header">
+                <h2>Salva a Leosito! - Nivel 1/3</h2>
+                <p>Muevete con las flechas ← → ↑ ↓</p>
+            </div>
+
+            <!-- Canvas del laberinto -->
+            <canvas id="mazeCanvas"></canvas>
+
+            <!-- Audio de ayuda -->
+            <audio id="help-audio" src="audio/help-leosito.mp3" preload="auto"></audio>
+        </div>
+
+        <!-- Mensaje de victoria con Leosito -->
+        <div id="victory-message">
+            <div class="leosito-scene">
+                <div class="leosito-big-emoji">🐻</div>
+                <div class="dialogue-box">
+                    <div class="dialogue-arrow"></div>
+                    <p id="dialogue-text" class="dialogue-text"></p>
+                    <div class="dialogue-continue" id="dialogue-continue">
+                        <span>▼</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="JS/maze.js"></script>
+</body>
+</html>

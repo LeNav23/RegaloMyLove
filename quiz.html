@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué tanto nos conoces? </title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <!-- Fondo de quiz con gradient -->
+    <div id="fondo-quiz"></div>
+    
+    <!-- Animated waves -->
+    <div class="background-waves">
+        <div class="wave-layer wave1"></div>
+        <div class="wave-layer wave2"></div>
+        <div class="wave-layer wave3"></div>
+    </div>
+
+    <!-- Intro message before quiz -->
+    <div class="intro-message" id="intro-message">
+        <p class="intro-text">Espera... antes de enseñarte, tengo que saber, ¿qué tan bien nos conoces?</p>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="quiz-container hidden" id="quiz-main-container">
+        <h1>Quiz Diagnostico 🤔</h1>
+
+        <div id="question-container">
+            <h2 id="question-text"></h2>
+            <div id="options-container"></div>
+            <div id="feedback" class="hidden">
+                <p id="feedback-text"></p>
+                <div class="feedback-emoji"></div>
+            </div>
+            <button id="next-btn" class="hidden">Siguiente pregunta</button>
+        </div>
+
+        <!-- Message final (hidden initially) -->
+        <div id="final-message" class="hidden">
+            <h2>¡Wooow! 🌟</h2>
+            <p id="final-text-1" class="hidden">Wow, si nos conoces bien :D</p>
+            <p id="final-text-2" class="hidden">Espera... QUE ES ESO ?!</p>
+            <button id="continue-btn" class="elegant-btn hidden">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Leo image on the right -->
+    <img src="imgs/Leox6.png" alt="Leo" class="leo-right-image" id="leo-image">
+    
+    <!-- Exclamation marks above Leo in arc formation -->
+    <div class="exclamation-container" id="exclamation-marks">
+        <span class="exclamation exclamation-left">❗</span>
+        <span class="exclamation exclamation-center">❗</span>
+        <span class="exclamation exclamation-right">❗</span>
+    </div>
+    
+    <!-- Hand that grabs Leo -->
+    <img src="imgs/handthief.png" alt="Hand" class="grabbing-hand" id="grabbing-hand">
+
+    <!-- Beach decorations - PNGs only -->
+    <div class="beach-items">
+        <img src="imgs/sebastian.png" alt="Sebastian" class="beach-character sebastian">
+    </div>
+
+    <div class="ocean-items">
+        <img src="imgs/crush.png" alt="Crush" class="ocean-character crush">
+        <img src="imgs/nemo.png" alt="Nemo" class="ocean-character nemo">
+    </div>
+
+    <div class="mermaid-scene">
+        <div class="rock"></div>
+        <img src="imgs/sirenita.png" alt="Ariel" class="mermaid">
+    </div>
+
+    <!-- Beach decorations - shells and starfish -->
+    <div class="beach-shells">
+        <div class="shell shell-1"></div>
+        <div class="shell shell-2"></div>
+        <div class="shell shell-3"></div>
+        <div class="shell shell-4"></div>
+        <div class="shell shell-5"></div>
+        <div class="starfish starfish-1"></div>
+        <div class="starfish starfish-2"></div>
+        <div class="starfish starfish-3"></div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/quiz.js"></script>
+</body>
+</html>

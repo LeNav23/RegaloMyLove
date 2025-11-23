@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#fondo-thief {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        /* Sol */
+        radial-gradient(circle 70px at 85% 15%, #FFD700 0%, #FFA500 60%, #FF8C00 80%, transparent 100%),
+        /* Nubes definidas */
+        radial-gradient(ellipse 140px 65px at 15% 20%, #FFFFFF 0%, #FFFFFF 40%, rgba(255, 255, 255, 0) 80%),
+        radial-gradient(ellipse 110px 55px at 18% 22%, #FAFAFA 0%, #FAFAFA 40%, rgba(250, 250, 250, 0) 80%),
+        radial-gradient(ellipse 170px 80px at 65% 25%, #FFFFFF 0%, #FFFFFF 40%, rgba(255, 255, 255, 0) 80%),
+        radial-gradient(ellipse 130px 65px at 70% 28%, #FAFAFA 0%, #FAFAFA 40%, rgba(250, 250, 250, 0) 80%),
+        radial-gradient(ellipse 130px 60px at 40% 15%, #FFFFFF 0%, #FFFFFF 40%, rgba(255, 255, 255, 0) 80%),
+        radial-gradient(ellipse 100px 50px at 42% 18%, #FAFAFA 0%, #FAFAFA 40%, rgba(250, 250, 250, 0) 80%),
+        radial-gradient(ellipse 110px 55px at 88% 22%, #FFFFFF 0%, #FFFFFF 40%, rgba(255, 255, 255, 0) 80%),
+        /* Flores más definidas */
+        radial-gradient(circle 7px at 10% 75%, #FF69B4 0%, #FF1493 50%, transparent 100%),
+        radial-gradient(circle 5px at 11% 76%, #FFD700 0%, #FFA500 50%, transparent 100%),
+        radial-gradient(circle 7px at 20% 80%, #FF1493 0%, #C71585 50%, transparent 100%),
+        radial-gradient(circle 5px at 21% 81%, #FFA500 0%, #FF8C00 50%, transparent 100%),
+        radial-gradient(circle 7px at 35% 78%, #9370DB 0%, #8B5DC8 50%, transparent 100%),
+        radial-gradient(circle 5px at 36% 79%, #FFD700 0%, #FFA500 50%, transparent 100%),
+        radial-gradient(circle 7px at 50% 82%, #FF69B4 0%, #FF1493 50%, transparent 100%),
+        radial-gradient(circle 5px at 51% 83%, #FFA500 0%, #FF8C00 50%, transparent 100%),
+        radial-gradient(circle 7px at 70% 76%, #FF1493 0%, #C71585 50%, transparent 100%),
+        radial-gradient(circle 5px at 71% 77%, #FFD700 0%, #FFA500 50%, transparent 100%),
+        radial-gradient(circle 7px at 85% 79%, #9370DB 0%, #8B5DC8 50%, transparent 100%),
+        radial-gradient(circle 5px at 86% 80%, #FFA500 0%, #FF8C00 50%, transparent 100%),
+        radial-gradient(circle 7px at 92% 82%, #FF69B4 0%, #FF1493 50%, transparent 100%),
+        /* Cielo y pasto con colores más sólidos */
+        linear-gradient(to bottom, 
+            #4A90E2 0%,
+            #5BA3F5 20%,
+            #7BB9FF 40%,
+            #87CEEB 60%,
+            #7cb878 62%,
+            #6ba866 70%,
+            #5a9654 80%,
+            #4a7c44 90%,
+            #3d6838 100%
+        );
+    background-size: 100% 100%;
+    z-index: -1;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Thief scene */
+.thief-scene {
+    position: fixed;
+    left: -500px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.thief-scene.active {
+    animation: thiefJourney 14s ease-in-out forwards;
+}
+
+.thief-character {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    left: 0;
+    top: -200px;
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.4));
+}
+
+.leo-captured {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    left: 160px;
+    top: 120px;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+.dialogue-bubble {
+    position: absolute;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 20px;
+    padding: 20px 30px;
+    left: 520px;
+    top: -100px;
+    min-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.dialogue-bubble p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+.dialogue-bubble::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #333;
+}
+
+.dialogue-bubble::after {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 17px solid white;
+}
+
+@keyframes thiefJourney {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    10% {
+        left: -500px;
+        opacity: 1;
+    }
+    25% {
+        left: 40%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    30% {
+        left: 40%;
+        transform: translate(-50%, -50%);
+    }
+    70% {
+        left: 40%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    85% {
+        left: 120%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    100% {
+        left: 120%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+.thief-scene.active .dialogue-bubble {
+    animation: dialogueAppear 1.5s ease-out 4s forwards;
+}
+
+@keyframes dialogueAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

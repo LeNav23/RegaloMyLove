@@ -1,0 +1,1016 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#fondo-uno {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: 
+        /* Briznas de pasto (grass blades) */
+        linear-gradient(85deg, transparent 48%, rgba(76, 124, 68, 0.4) 49%, rgba(76, 124, 68, 0.4) 51%, transparent 52%),
+        linear-gradient(88deg, transparent 48%, rgba(90, 150, 84, 0.3) 49%, rgba(90, 150, 84, 0.3) 51%, transparent 52%),
+        linear-gradient(82deg, transparent 48%, rgba(82, 140, 76, 0.35) 49%, rgba(82, 140, 76, 0.35) 51%, transparent 52%),
+        linear-gradient(87deg, transparent 48%, rgba(76, 124, 68, 0.3) 49%, rgba(76, 124, 68, 0.3) 51%, transparent 52%),
+        /* Hojas pequeñas de pasto */
+        radial-gradient(ellipse 3px 8px at 8% 22%, rgba(76, 124, 68, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 14% 28%, rgba(90, 150, 84, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 23% 25%, rgba(82, 140, 76, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 31% 30%, rgba(76, 124, 68, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 42% 27%, rgba(90, 150, 84, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 51% 24%, rgba(82, 140, 76, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 63% 29%, rgba(76, 124, 68, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 72% 26%, rgba(90, 150, 84, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 85% 23%, rgba(82, 140, 76, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 93% 28%, rgba(76, 124, 68, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 11% 62%, rgba(90, 150, 84, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 19% 68%, rgba(82, 140, 76, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 28% 65%, rgba(76, 124, 68, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 37% 70%, rgba(90, 150, 84, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 48% 67%, rgba(82, 140, 76, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 58% 63%, rgba(76, 124, 68, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 69% 69%, rgba(90, 150, 84, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 79% 66%, rgba(82, 140, 76, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 88% 71%, rgba(76, 124, 68, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 3px 8px at 95% 64%, rgba(90, 150, 84, 0.5) 0%, transparent 70%),
+        /* Flores pequeñas en el pasto */
+        radial-gradient(circle 4px at 12% 25%, #FFD700 0%, #FFD700 50%, transparent 50%),
+        radial-gradient(circle 4px at 28% 35%, #FF69B4 0%, #FF69B4 50%, transparent 50%),
+        radial-gradient(circle 4px at 45% 28%, #FFA500 0%, #FFA500 50%, transparent 50%),
+        radial-gradient(circle 4px at 68% 32%, #9370DB 0%, #9370DB 50%, transparent 50%),
+        radial-gradient(circle 4px at 82% 26%, #FFD700 0%, #FFD700 50%, transparent 50%),
+        radial-gradient(circle 4px at 15% 65%, #FF1493 0%, #FF1493 50%, transparent 50%),
+        radial-gradient(circle 4px at 35% 72%, #FFA500 0%, #FFA500 50%, transparent 50%),
+        radial-gradient(circle 4px at 55% 68%, #FFD700 0%, #FFD700 50%, transparent 50%),
+        radial-gradient(circle 4px at 75% 70%, #FF69B4 0%, #FF69B4 50%, transparent 50%),
+        radial-gradient(circle 4px at 88% 67%, #9370DB 0%, #9370DB 50%, transparent 50%),
+        /* Textura de pasto */
+        repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(76, 124, 68, 0.08) 1px, rgba(76, 124, 68, 0.08) 2px),
+        repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(90, 150, 84, 0.06) 1px, rgba(90, 150, 84, 0.06) 2px),
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(106, 168, 102, 0.05) 2px, rgba(106, 168, 102, 0.05) 4px),
+        repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(82, 140, 76, 0.05) 2px, rgba(82, 140, 76, 0.05) 4px),
+        /* Gradiente de pasto base */
+        linear-gradient(to bottom, 
+            #7cb878 0%,
+            #6ba866 25%,
+            #5a9654 50%,
+            #4a7c44 75%,
+            #3d6838 100%
+        );
+    overflow-y: auto;
+}
+
+/* Plataforma de juego (mesa) */
+#fondo-uno::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 1400px;
+    height: 85%;
+    background: 
+        /* Textura de madera */
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(101, 67, 33, 0.1) 3px, rgba(101, 67, 33, 0.1) 6px),
+        linear-gradient(to bottom, 
+            #D2691E 0%,
+            #C4661A 20%,
+            #B8651E 50%,
+            #A85E1A 80%,
+            #8B4513 100%
+        );
+    border-radius: 30px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 2px 10px rgba(255, 255, 255, 0.2),
+        inset 0 -2px 10px rgba(0, 0, 0, 0.3);
+    border: 8px solid #654321;
+    z-index: 1;
+}
+
+/* Intro Message */
+#intro-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(25px);
+    padding: 3rem 4rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+#intro-message.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#intro-message h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+}
+
+#intro-message p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+#intro-message .rules {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+}
+
+#start-btn {
+    margin-top: 2rem;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Game Container */
+#game-container {
+    display: none;
+    width: 95%;
+    max-width: 1200px;
+    height: 90vh;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Character Avatars */
+.character-avatar {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.4));
+    z-index: 10;
+}
+
+.thief-avatar {
+    left: -130px;
+    top: 0;
+}
+
+.leo-in-hands {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    left: -115px;
+    top: 80px;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.3));
+    z-index: 11;
+}
+
+.player-avatar {
+    right: -130px;
+    bottom: 60px;
+}
+
+#game-container.active {
+    display: flex;
+}
+
+#game-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#game-header h2 {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#turn-indicator {
+    font-size: 1.5rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* Player Areas */
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.player-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-count {
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+#bot-area, #player-area {
+    width: 100%;
+    max-width: 900px;
+}
+
+.hand {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    min-height: 140px;
+}
+
+/* Cards */
+.card {
+    width: 80px;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 4px solid white;
+}
+
+.card > div {
+    background: white;
+    width: 55px;
+    height: 80px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Color styles for cards */
+.card.red {
+    background: #E53935;
+}
+
+.card.red > div {
+    color: #E53935;
+}
+
+.card.yellow {
+    background: #FDD835;
+}
+
+.card.yellow > div {
+    color: #FDD835;
+}
+
+.card.green {
+    background: #43A047;
+}
+
+.card.green > div {
+    color: #43A047;
+}
+
+.card.blue {
+    background: #1E88E5;
+}
+
+.card.blue > div {
+    color: #1E88E5;
+}
+
+.card.wild {
+    background: linear-gradient(135deg, #E53935 0%, #E53935 25%, #FDD835 25%, #FDD835 50%, #43A047 50%, #43A047 75%, #1E88E5 75%, #1E88E5 100%);
+}
+
+.card.wild > div {
+    color: #333;
+    background: white;
+    font-size: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    cursor: default;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.card-back:hover {
+    transform: none;
+}
+
+/* Card Colors */
+.card.red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.card.yellow {
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    color: #333;
+}
+
+.card.green {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.card.blue {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.card.wild {
+    background: linear-gradient(135deg, #000, #333);
+}
+
+.card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.card.disabled:hover {
+    transform: none;
+}
+
+/* Bot cards (hidden) */
+#bot-hand .card {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: transparent;
+    cursor: default;
+}
+
+#bot-hand .card:hover {
+    transform: none;
+}
+
+/* Game Board */
+#game-board {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.pile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#draw-pile {
+    cursor: pointer;
+}
+
+#draw-pile:hover .card {
+    transform: scale(1.05);
+}
+
+#current-card {
+    width: 100px;
+    height: 150px;
+    font-size: 2.5rem;
+}
+
+#game-info {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#game-info p {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#current-color {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Color Picker Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.color-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.color-btn {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.color-btn.red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.color-btn.yellow {
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    color: #333;
+}
+
+.color-btn.green {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.color-btn.blue {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+/* Victory/Defeat Messages */
+#victory-message, #defeat-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 3rem 4rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+    z-index: 300;
+}
+
+#victory-message.active, #defeat-message.active {
+    display: block;
+}
+
+/* Thief escape scene */
+#defeat-message {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.thief-escape-scene {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+#defeat-message.active .thief-escape-scene {
+    animation: thiefEscape 6s ease-in-out forwards;
+}
+
+.thief-escape {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    left: -150px;
+    top: -250px;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+.leo-escape {
+    position: absolute;
+    width: 130px;
+    height: auto;
+    left: -40px;
+    top: -80px;
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.3));
+}
+
+.thief-dialogue {
+    position: absolute;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 20px;
+    padding: 20px 30px;
+    left: 180px;
+    top: -150px;
+    min-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.thief-dialogue p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+.thief-dialogue::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #333;
+}
+
+.thief-dialogue::after {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 17px solid white;
+}
+
+@keyframes thiefEscape {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    45% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(100vw, -50%) scale(1.5);
+    }
+}
+
+/* Show dialogue during escape */
+#defeat-message.active .thief-dialogue {
+    animation: showDialogue 6s ease forwards;
+}
+
+@keyframes showDialogue {
+    0%, 20% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+/* Victory scene styles */
+.victory-scene {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+#victory-message.active .victory-scene {
+    animation: thiefDefeated 3s ease-out forwards;
+}
+
+.nikki-punch {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    left: -1500px;
+    top: -200px;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.4));
+    opacity: 1;
+    z-index: 10;
+}
+
+#victory-message.active .nikki-punch {
+    animation: nikkiPunch 6.5s ease-out forwards;
+}
+
+.thief-defeated {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    left: -150px;
+    top: -250px;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.4));
+    transform: rotate(0deg);
+}
+
+#victory-message.active .thief-defeated {
+    animation: thiefFlyAway 3s ease-out 3.5s forwards;
+}
+
+.leo-victory {
+    position: absolute;
+    width: 130px;
+    height: auto;
+    left: -40px;
+    top: -80px;
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.3));
+    display: block;
+}
+
+.leo-happy {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    left: -90px;
+    top: -120px;
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.3));
+    display: none;
+}
+
+.victory-dialogue {
+    position: absolute;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 20px;
+    padding: 20px 30px 60px 30px;
+    left: 200px;
+    top: -150px;
+    min-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.victory-dialogue.visible {
+    animation: dialoguePop 0.5s ease-out forwards;
+}
+
+.victory-dialogue p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+.victory-dialogue::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #333;
+}
+
+.victory-dialogue::after {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 17px solid white;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.heart-1 {
+    left: -90px;
+    top: -150px;
+}
+
+.heart-2 {
+    left: -50px;
+    top: -140px;
+}
+
+.heart-3 {
+    left: -10px;
+    top: -135px;
+}
+
+#victory-message.active .heart {
+    animation: floatHeart 4s ease-out 6.5s forwards;
+}
+
+.heart-1 {
+    animation-delay: 6.5s !important;
+}
+
+.heart-2 {
+    animation-delay: 7s !important;
+}
+
+.heart-3 {
+    animation-delay: 7.5s !important;
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.3);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-120px) scale(0.7);
+    }
+}
+
+.continue-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.continue-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dialogue-continue {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.dialogue-continue.visible {
+    opacity: 1;
+    animation: bounceArrow 1s ease-in-out infinite;
+}
+
+@keyframes thiefDefeated {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    40% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+@keyframes nikkiPunch {
+    0% {
+        opacity: 1;
+        left: -1500px;
+    }
+    53.8% {
+        opacity: 1;
+        left: -150px;
+    }
+    100% {
+        opacity: 0;
+        left: -150px;
+    }
+}
+
+@keyframes thiefFlyAway {
+    0% {
+        transform: rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(720deg) translateX(1500px);
+        opacity: 0;
+    }
+}
+
+@keyframes thiefFall {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes dialoguePop {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(5px);
+    }
+}
+
+.leosito-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.leosito-big-emoji {
+    font-size: 8rem;
+    animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 60px;
+        height: 90px;
+        font-size: 1.5rem;
+    }
+    
+    #current-card {
+        width: 80px;
+        height: 120px;
+        font-size: 2rem;
+    }
+    
+    #game-board {
+        gap: 1rem;
+        padding: 1rem;
+    }
+}

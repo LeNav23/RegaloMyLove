@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodge the Obstacles! ☀️</title>
+    <link rel="stylesheet" href="CSS/obstacle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="fondo-obstacle">
+        <!-- Intro message -->
+        <div id="intro-message" class="active">
+            <h1>Watch Out! ☀️</h1>
+            <p>Obstacles are coming your way!</p>
+            <p class="instruction">Move your mouse to dodge them for 20 seconds!</p>
+            <button id="start-btn">Start! 🏃‍♀️</button>
+        </div>
+
+        <!-- Game container -->
+        <div id="game-container">
+            <div id="game-header">
+                <div class="stat">
+                    <span class="label">Time:</span>
+                    <span id="timer">20</span>s
+                </div>
+                <div class="stat">
+                    <span class="label">Hits:</span>
+                    <span id="hits">0</span>
+                </div>
+            </div>
+
+            <!-- Game canvas -->
+            <div id="game-area">
+                <!-- Player (controlled by mouse) -->
+                <div id="player">🏃‍♀️</div>
+                
+                <!-- Obstacles will be added dynamically -->
+            </div>
+        </div>
+
+        <!-- Victory message -->
+        <div id="victory-message">
+            <div class="victory-content">
+                <h1>You made it! 🎉</h1>
+                <h2>You survived the obstacles!</h2>
+                <p class="hits-info">Hits taken: <span id="final-hits">0</span></p>
+                <button id="continue-btn">Continue... 💙</button>
+            </div>
+        </div>
+
+        <!-- Game Over message -->
+        <div id="gameover-message">
+            <div class="gameover-content">
+                <h1>Oh no! 💔</h1>
+                <h2>Too many hits!</h2>
+                <p>You got hit <span id="gameover-hits">0</span> times</p>
+                <button id="retry-btn">Try Again 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Beach decorations -->
+    <div class="beach-shells">
+        <div class="shell shell-1"></div>
+        <div class="shell shell-2"></div>
+        <div class="starfish starfish-1"></div>
+    </div>
+
+    <script src="JS/obstacle.js"></script>
+</body>
+</html>

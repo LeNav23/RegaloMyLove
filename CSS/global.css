@@ -1,0 +1,30 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1E90FF; /* fallback azul mar */
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+/* Secciones */
+.pantalla {
+  display: none;
+}
+.pantalla.activa {
+  display: block;
+}
+

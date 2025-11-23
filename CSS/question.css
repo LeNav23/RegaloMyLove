@@ -1,0 +1,857 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, 
+        #87CEEB 0%,
+        #FFB6C1 40%,
+        #FFA07A 60%,
+        #F4A460 80%,
+        #DEB887 100%
+    );
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Beach and ocean - exactly like quiz.html */
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background: 
+        /* Textura de arena más visible */
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 1px,
+            rgba(210, 180, 140, 0.15) 1px,
+            rgba(210, 180, 140, 0.15) 2px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 1px,
+            rgba(222, 184, 135, 0.15) 1px,
+            rgba(222, 184, 135, 0.15) 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(245, 222, 179, 0.08) 3px,
+            rgba(245, 222, 179, 0.08) 4px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(210, 180, 140, 0.08) 3px,
+            rgba(210, 180, 140, 0.08) 4px
+        ),
+        /* Granos de arena (puntos pequeños) */
+        radial-gradient(circle at 10% 15%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 25% 8%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 15% 25%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 35% 12%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 8% 35%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 45% 20%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 22% 40%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 55% 5%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 65% 18%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 42% 35%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 75% 12%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 85% 25%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 70% 8%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 92% 15%, rgba(160, 140, 120, 0.3) 0%, transparent 0.5%),
+        radial-gradient(circle at 58% 28%, rgba(139, 119, 101, 0.3) 0%, transparent 0.5%),
+        /* Manchas más grandes para variación */
+        radial-gradient(circle at 20% 30%, rgba(245, 222, 179, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 25%, rgba(222, 184, 135, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 40% 15%, rgba(210, 180, 140, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 60% 35%, rgba(245, 222, 179, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 30% 45%, rgba(222, 184, 135, 0.2) 0%, transparent 40%),
+        /* Textura de espuma/encuentro mar-arena (55%-60% zona de transición) */
+        radial-gradient(circle at 5% 55%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 12% 56%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 18% 55.5%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 25% 57%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 32% 55%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 38% 56.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 45% 55.5%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 52% 57%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 58% 55%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 65% 56%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 71% 55.5%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 78% 57%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 85% 55%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 92% 56%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 97% 55.5%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 8% 58%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 15% 58.5%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 22% 58%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 29% 59%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 36% 58%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 43% 59%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 50% 58%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 57% 59%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 64% 58%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 70% 59%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 77% 58%, rgba(255, 255, 255, 0.6) 0%, transparent 0.4%),
+        radial-gradient(circle at 84% 59%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        radial-gradient(circle at 91% 58%, rgba(255, 255, 255, 0.7) 0%, transparent 0.4%),
+        radial-gradient(circle at 95% 59%, rgba(255, 255, 255, 0.8) 0%, transparent 0.4%),
+        /* Gradiente invertido - mar arriba (55%), arena abajo (45%) */
+        linear-gradient(180deg, 
+            #1a7a9e 0%,
+            #2596be 10%,
+            #4db8e8 30%,
+            #6ac5e8 50%,
+            #e8d5b7 58%,
+            #f0d9b5 65%,
+            #ffe4c4 75%,
+            #f4e4c1 85%,
+            #f5deb3 100%
+        );
+    z-index: -1;
+    overflow: hidden;
+    filter: contrast(1.05) brightness(0.98);
+}
+
+/* Rock formation - natural and irregular */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 25vw;
+    height: 50vh;
+    background: 
+        /* Grietas y fisuras */
+        linear-gradient(135deg, transparent 0%, transparent 45%, rgba(60, 50, 45, 0.4) 45.5%, transparent 46%),
+        linear-gradient(125deg, transparent 0%, transparent 58%, rgba(70, 60, 55, 0.3) 58.5%, transparent 59%),
+        linear-gradient(115deg, transparent 0%, transparent 72%, rgba(55, 45, 40, 0.4) 72.5%, transparent 73%),
+        linear-gradient(140deg, transparent 0%, transparent 35%, rgba(65, 55, 50, 0.3) 35.5%, transparent 36%),
+        /* Texturas de roca - manchas irregulares */
+        radial-gradient(ellipse 120px 80px at 15% 75%, rgba(90, 80, 70, 0.8) 0%, transparent 70%),
+        radial-gradient(ellipse 90px 110px at 8% 55%, rgba(75, 65, 58, 0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 100px 70px at 22% 85%, rgba(85, 75, 68, 0.8) 0%, transparent 70%),
+        radial-gradient(ellipse 80px 90px at 28% 65%, rgba(70, 62, 55, 0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 110px 85px at 12% 40%, rgba(80, 70, 63, 0.75) 0%, transparent 70%),
+        /* Musgo y variaciones verdes en la roca */
+        radial-gradient(ellipse 60px 50px at 18% 50%, rgba(85, 95, 70, 0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 45px 55px at 10% 45%, rgba(75, 85, 65, 0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 50px 40px at 25% 58%, rgba(80, 90, 68, 0.35) 0%, transparent 60%),
+        /* Detalles más claros (reflejos de luz) */
+        radial-gradient(ellipse 40px 35px at 20% 70%, rgba(120, 110, 100, 0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 35px 30px at 15% 48%, rgba(115, 105, 95, 0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 30px 40px at 25% 80%, rgba(110, 100, 90, 0.45) 0%, transparent 60%),
+        /* Sombras profundas en grietas */
+        radial-gradient(ellipse 70px 60px at 12% 62%, rgba(40, 35, 30, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 55px 65px at 22% 72%, rgba(45, 38, 32, 0.5) 0%, transparent 70%),
+        /* Base de color de roca */
+        linear-gradient(180deg, 
+            transparent 0%,
+            transparent 5%,
+            rgba(85, 75, 68, 0.3) 10%,
+            rgba(90, 80, 72, 0.95) 45%,
+            #5a5046 100%
+        );
+    clip-path: polygon(
+        0% 100%,
+        0% 40%,
+        3% 38%,
+        5% 42%,
+        8% 39%,
+        12% 41%,
+        15% 37%,
+        18% 39%,
+        22% 36%,
+        25% 38%,
+        28% 35%,
+        32% 37%,
+        35% 34%,
+        38% 36%,
+        42% 33%,
+        45% 35%,
+        48% 32%,
+        52% 34%,
+        55% 31%,
+        58% 33%,
+        62% 30%,
+        65% 32%,
+        70% 35%,
+        75% 40%,
+        80% 45%,
+        85% 50%,
+        90% 58%,
+        95% 68%,
+        100% 80%,
+        100% 100%
+    );
+    z-index: 2;
+    filter: drop-shadow(3px 0 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Lighthouse image */
+.lighthouse-img {
+    position: fixed;
+    bottom: 28vh;
+    left: 5vw;
+    height: 350px;
+    width: auto;
+    z-index: 15;
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Light glow on top of lighthouse */
+.lighthouse-img::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, 
+        rgba(255, 245, 180, 0.9) 0%,
+        rgba(255, 245, 180, 0.6) 30%,
+        rgba(255, 245, 180, 0.3) 50%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(255, 245, 180, 0.8),
+        0 0 40px rgba(255, 245, 180, 0.6),
+        0 0 60px rgba(255, 245, 180, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+/* Flying birds */
+.bird {
+    position: fixed;
+    width: 30px;
+    height: 20px;
+    z-index: 5;
+}
+
+.bird::before,
+.bird::after {
+    content: '';
+    position: absolute;
+    background: #2c2c2c;
+    border-radius: 50%;
+}
+
+/* Left wing */
+.bird::before {
+    width: 15px;
+    height: 8px;
+    left: 0;
+    top: 50%;
+    transform-origin: right center;
+    animation: flapLeft 0.5s ease-in-out infinite;
+}
+
+/* Right wing */
+.bird::after {
+    width: 15px;
+    height: 8px;
+    right: 0;
+    top: 50%;
+    transform-origin: left center;
+    animation: flapRight 0.5s ease-in-out infinite;
+}
+
+/* Bird body */
+.bird {
+    background: radial-gradient(circle at center, #2c2c2c 0%, #2c2c2c 40%, transparent 40%);
+}
+
+.bird-1 {
+    top: 15%;
+    left: -50px;
+    animation: flyAcross1 25s linear infinite;
+}
+
+.bird-2 {
+    top: 22%;
+    left: -80px;
+    animation: flyAcross2 30s linear infinite;
+    animation-delay: 5s;
+}
+
+.bird-3 {
+    top: 18%;
+    left: -100px;
+    animation: flyAcross3 28s linear infinite;
+    animation-delay: 10s;
+}
+
+@keyframes flapLeft {
+    0%, 100% {
+        transform: rotateY(0deg) rotateZ(-20deg);
+    }
+    50% {
+        transform: rotateY(0deg) rotateZ(-60deg);
+    }
+}
+
+@keyframes flapRight {
+    0%, 100% {
+        transform: rotateY(0deg) rotateZ(20deg);
+    }
+    50% {
+        transform: rotateY(0deg) rotateZ(60deg);
+    }
+}
+
+@keyframes flyAcross1 {
+    0% {
+        left: -50px;
+        top: 15%;
+    }
+    50% {
+        top: 12%;
+    }
+    100% {
+        left: calc(100vw + 50px);
+        top: 15%;
+    }
+}
+
+@keyframes flyAcross2 {
+    0% {
+        left: -50px;
+        top: 22%;
+    }
+    50% {
+        top: 25%;
+    }
+    100% {
+        left: calc(100vw + 50px);
+        top: 22%;
+    }
+}
+
+@keyframes flyAcross3 {
+    0% {
+        left: -50px;
+        top: 18%;
+    }
+    50% {
+        top: 16%;
+    }
+    100% {
+        left: calc(100vw + 50px);
+        top: 18%;
+    }
+}
+
+/* Characters */
+.character {
+    position: fixed;
+    z-index: 15;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Sirenita on the beach */
+.sirenita {
+    bottom: 5vh;
+    right: 15vw;
+    height: 150px;
+    width: auto;
+}
+
+/* Olaf on the beach */
+.olaf {
+    bottom: 5vh;
+    right: 35vw;
+    height: 140px;
+    width: auto;
+}
+
+/* Nemo in the water */
+.nemo {
+    top: 55vh;
+    left: 40vw;
+    height: 80px;
+    width: auto;
+    animation: swim1 6s ease-in-out infinite;
+}
+
+/* Sebastian in the water */
+.sebastian {
+    top: 58vh;
+    right: 25vw;
+    height: 70px;
+    width: auto;
+    animation: swim2 7s ease-in-out infinite;
+}
+
+/* Leox in top right corner */
+.leox {
+    top: 2vh;
+    right: 2vw;
+    height: 120px;
+    width: auto;
+}
+
+@keyframes swim1 {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-15px) translateX(10px);
+    }
+    50% {
+        transform: translateY(-5px) translateX(20px);
+    }
+    75% {
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+@keyframes swim2 {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    30% {
+        transform: translateY(-10px) translateX(-15px);
+    }
+    60% {
+        transform: translateY(-20px) translateX(-5px);
+    }
+    90% {
+        transform: translateY(-5px) translateX(-10px);
+    }
+}
+
+/* Sun reflection on water */
+.sun-reflection {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 80px;
+    background: radial-gradient(ellipse, rgba(255, 200, 100, 0.6) 0%, rgba(255, 150, 50, 0.3) 40%, transparent 70%);
+    filter: blur(15px);
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0.6;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+/* Question Container */
+#question-container {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+#main-question {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#buttons-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-no {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    color: white;
+}
+
+.btn-no:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+    color: white;
+}
+
+.btn-yes:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(81, 207, 102, 0.4);
+}
+
+#image-container {
+    margin-top: 2rem;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-container img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Celebration mode - romantic sunset */
+body.celebration-mode {
+    background: linear-gradient(180deg, 
+        #FF6B9D 0%,
+        #FFA07A 20%,
+        #FF69B4 40%,
+        #FFB6C1 60%,
+        #FFA500 80%,
+        #FF1493 100%
+    );
+    animation: backgroundPulse 3s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+/* Characters celebration */
+.character.celebrate {
+    animation: jumpCelebrate 0.6s ease-in-out infinite;
+}
+
+@keyframes jumpCelebrate {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-30px) rotate(-10deg);
+    }
+    75% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+}
+
+/* Lighthouse celebration */
+.lighthouse-img.lighthouse-celebrate::after {
+    box-shadow: 
+        0 0 40px rgba(255, 245, 180, 1),
+        0 0 80px rgba(255, 245, 180, 0.8),
+        0 0 120px rgba(255, 245, 180, 0.6);
+}
+
+/* Fireworks */
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color);
+    box-shadow: 
+        0 0 20px var(--color),
+        0 0 40px var(--color),
+        0 0 60px var(--color),
+        0 0 80px var(--color);
+    animation: fireworkExplode 1.5s ease-out forwards;
+}
+
+@keyframes fireworkExplode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(30);
+        opacity: 0;
+    }
+}
+
+/* Floating hearts */
+.hearts-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 19;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp 6s ease-in forwards;
+    filter: drop-shadow(0 0 5px rgba(255, 20, 147, 0.6));
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -50px;
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(20px) rotate(180deg);
+    }
+    100% {
+        bottom: 110vh;
+        opacity: 0;
+        transform: translateX(-20px) rotate(360deg);
+    }
+}
+
+/* Confetti */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 18;
+}
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    animation: confettiFall 5s ease-in forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        top: -10px;
+        transform: rotateZ(0deg);
+    }
+    100% {
+        top: 110vh;
+        transform: rotateZ(720deg);
+    }
+}
+
+/* Romantic message */
+.romantic-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+    z-index: 25;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 80px;
+    border-radius: 30px;
+    box-shadow: 
+        0 20px 60px rgba(255, 20, 147, 0.5),
+        0 0 100px rgba(255, 105, 180, 0.3),
+        inset 0 0 50px rgba(255, 182, 193, 0.2);
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.romantic-message.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Happy cat gifs around message */
+.happycat {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.happycat-1 {
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.happycat-2 {
+    top: -40px;
+    right: -40px;
+    animation-delay: 0.2s;
+}
+
+.happycat-3 {
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    animation-delay: 0.4s;
+}
+
+.happycat-4 {
+    bottom: -40px;
+    right: -40px;
+    animation-delay: 0.6s;
+}
+
+.happycat-5 {
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0.8s;
+}
+
+.happycat-6 {
+    bottom: -40px;
+    left: -40px;
+    animation-delay: 1s;
+}
+
+.happycat-7 {
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    animation-delay: 1.2s;
+}
+
+.happycat-8 {
+    top: -40px;
+    left: -40px;
+    animation-delay: 1.4s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+}
+
+.stars-decoration {
+    font-size: 3rem;
+    margin: 20px 0;
+    animation: twinkle 1s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.main-message {
+    font-size: 4rem;
+    color: #FF1493;
+    font-weight: 700;
+    margin: 30px 0;
+    text-shadow: 
+        3px 3px 6px rgba(255, 20, 147, 0.3),
+        0 0 20px rgba(255, 105, 180, 0.5);
+    animation: messageZoom 2s ease-out infinite;
+}
+
+@keyframes messageZoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.sub-message {
+    font-size: 1.8rem;
+    color: #FF69B4;
+    font-weight: 600;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+}

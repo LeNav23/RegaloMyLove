@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#fondo-thief {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../imgs/dungeon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Thief scene */
+.thief-scene {
+    position: fixed;
+    left: -500px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.thief-scene.active {
+    animation: thiefJourney 14s ease-in-out forwards;
+}
+
+.thief-character {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    left: 0;
+    top: -200px;
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.4));
+}
+
+.leo-captured {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    left: 160px;
+    top: 120px;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+.dialogue-bubble {
+    position: absolute;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 20px;
+    padding: 20px 30px;
+    left: 520px;
+    top: -100px;
+    min-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.dialogue-bubble p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+.dialogue-bubble::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #333;
+}
+
+.dialogue-bubble::after {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 17px solid white;
+}
+
+@keyframes thiefJourney {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    10% {
+        left: -500px;
+        opacity: 1;
+    }
+    25% {
+        left: 40%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    30% {
+        left: 40%;
+        transform: translate(-50%, -50%);
+    }
+    70% {
+        left: 40%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    85% {
+        left: 120%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    100% {
+        left: 120%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+.thief-scene.active .dialogue-bubble {
+    animation: dialogueAppear 1.5s ease-out 4s forwards;
+}
+
+@keyframes dialogueAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

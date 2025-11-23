@@ -1,0 +1,758 @@
+/* Fondo de portada con animación de olas CSS */
+#fondo-portada {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, 
+    #4db8e8 0%,
+    #2596be 50%,
+    #1a7a9e 100%
+  );
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Animated waves */
+#fondo-portada::before,
+#fondo-portada::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.25) 0%, transparent 50%);
+  animation: waveRotate 20s linear infinite;
+}
+
+#fondo-portada::after {
+  background: 
+    radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  animation: waveRotate 25s linear infinite reverse;
+}
+
+/* Wave layers */
+.wave-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  opacity: 0.6;
+}
+
+.wave1 {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,50 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="%23ffffff"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+  animation: waveMove1 10s linear infinite;
+  bottom: -100px;
+  height: 180px;
+}
+
+.wave2 {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,40 C200,90 400,10 600,60 C800,110 1000,20 1200,70 L1200,120 L0,120 Z" fill="%23ffffff"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+  animation: waveMove2 8s linear infinite reverse;
+  bottom: -80px;
+  opacity: 0.4;
+  height: 160px;
+}
+
+.wave3 {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,80 C250,30 450,100 600,60 C750,20 950,90 1200,60 L1200,120 L0,120 Z" fill="%23ffffff"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+  animation: waveMove3 12s linear infinite;
+  bottom: -60px;
+  opacity: 0.3;
+  height: 140px;
+}
+
+@keyframes waveRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes waveMove1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1200px);
+  }
+}
+
+@keyframes waveMove2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1200px);
+  }
+}
+
+@keyframes waveMove3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1200px);
+  }
+}
+
+/* Burbujas del mar */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  opacity: 0.6;
+  animation: bubbleRise linear infinite;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.bubble:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  left: 10%;
+  animation-duration: 6s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 15px;
+  height: 15px;
+  left: 20%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+  width: 25px;
+  height: 25px;
+  left: 30%;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+  width: 18px;
+  height: 18px;
+  left: 45%;
+  animation-duration: 8s;
+  animation-delay: 0.5s;
+}
+
+.bubble:nth-child(5) {
+  width: 22px;
+  height: 22px;
+  left: 55%;
+  animation-duration: 6.5s;
+  animation-delay: 1.5s;
+}
+
+.bubble:nth-child(6) {
+  width: 16px;
+  height: 16px;
+  left: 65%;
+  animation-duration: 7.5s;
+  animation-delay: 2.5s;
+}
+
+.bubble:nth-child(7) {
+  width: 20px;
+  height: 20px;
+  left: 75%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(8) {
+  width: 24px;
+  height: 24px;
+  left: 85%;
+  animation-duration: 5.5s;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(9) {
+  width: 17px;
+  height: 17px;
+  left: 15%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(10) {
+  width: 19px;
+  height: 19px;
+  left: 90%;
+  animation-duration: 6.5s;
+  animation-delay: 0.5s;
+}
+
+@keyframes bubbleRise {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+    transform: translateX(0) scale(1);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(20px) scale(1.1);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(-20px) scale(0.8);
+  }
+}
+
+/* Texto principal */
+#portada h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #F4E1C1; /* Sand Beige */
+  text-shadow: 2px 2px 10px rgba(30, 144, 255, 0.8); /* Ocean Blue glow */
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+#portada p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff; /* blanco para contraste */
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+/* Botón principal */
+#portada button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: #00FF7F; /* Seafoam Green */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+#portada button:hover {
+  background: #32CD32; /* Verde más oscuro */
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.elsa {
+  width: 150px;
+  position: fixed;
+  bottom: 0;
+  right: -180px;
+  opacity: 0;
+  z-index: 5;
+  animation: elsaWalkIn 8s ease-in-out infinite;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.elsa.izquierda {
+  width: 150px;
+  position: fixed;
+  bottom: 0;
+  left: -180px;
+  opacity: 0;
+  transform: scaleX(-1);
+  z-index: 5;
+  animation: elsaWalkInLeft 8s ease-in-out infinite;
+  animation-delay: 4s;
+  filter: drop-shadow(-2px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* Olaf sentado - positioned on bottom left */
+.olaf-sitting {
+  width: 150px;
+  position: fixed;
+  bottom: 55%;
+  left: 100px;
+  z-index: 6;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+  animation: olafBounce 3s ease-in-out infinite;
+}
+
+@keyframes olafBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Olaf lanzando - positioned on bottom right */
+.olaf-throwing {
+  width: 150px;
+  position: fixed;
+  bottom: 45%;
+  right: 100px;
+  z-index: 6;
+  filter: drop-shadow(-2px 4px 6px rgba(0, 0, 0, 0.4));
+  animation: olafThrow 2s ease-in-out infinite;
+}
+
+@keyframes olafThrow {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg) translateY(-5px);
+  }
+  50% {
+    transform: rotate(0deg) translateY(0);
+  }
+  75% {
+    transform: rotate(10deg) translateY(-5px);
+  }
+}
+
+/* Snow piles */
+.snow-pile {
+  position: fixed;
+  z-index: 5;
+  background: radial-gradient(ellipse at center, #ffffff 0%, #e6f4ff 50%, rgba(230, 244, 255, 0.5) 100%);
+  border-radius: 50%;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.snow-sitting {
+  width: 100px;
+  height: 40px;
+  bottom: calc(55% - 20px);
+  left: 115px;
+  animation: snowPulse 3s ease-in-out infinite;
+}
+
+.snow-throwing {
+  width: 100px;
+  height: 40px;
+  bottom: calc(45% - 20px);
+  right: 115px;
+  animation: snowShake 2s ease-in-out infinite;
+}
+
+@keyframes snowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes snowShake {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    transform: translateX(-3px) scale(0.98);
+  }
+  50% {
+    transform: translateX(0) scale(1);
+  }
+  75% {
+    transform: translateX(3px) scale(0.98);
+  }
+}
+
+/* Bouncing Leo - DVD style */
+#bouncing-leo {
+  position: fixed;
+  width: 120px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.decoraciones {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden; /* Add this to contain the hearts */
+}
+
+.decoraciones .corazon {
+  position: fixed; /* Change from absolute to fixed */
+  font-size: 2rem;
+  animation: subir 6s infinite linear; /* Added linear for smoother movement */
+  bottom: -20px; /* Start just below the viewport */
+}
+
+/* Update heart positions and delays */
+.decoraciones .corazon:nth-child(1) { left: 20%; animation-delay: 0s; }
+.decoraciones .corazon:nth-child(2) { left: 40%; animation-delay: 2s; color: #FFB347; }
+.decoraciones .corazon:nth-child(3) { left: 60%; animation-delay: 4s; }
+.decoraciones .corazon:nth-child(4) { left: 80%; animation-delay: 1s; color: #FF1493; }
+.decoraciones .corazon:nth-child(5) { left: 30%; animation-delay: 3s; color: #FF0000; }
+
+@keyframes subir {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación Elsa - más realista */
+@keyframes elsaWalkIn {
+  0% {
+    opacity: 0;
+    right: -180px;
+  }
+  15% {
+    opacity: 1;
+    right: 20px;
+  }
+  85% {
+    opacity: 1;
+    right: 20px;
+  }
+  100% {
+    opacity: 0;
+    right: -180px;
+  }
+}
+
+@keyframes elsaWalkInLeft {
+  0% {
+    opacity: 0;
+    left: -180px;
+  }
+  15% {
+    opacity: 1;
+    left: 20px;
+  }
+  85% {
+    opacity: 1;
+    left: 20px;
+  }
+  100% {
+    opacity: 0;
+    left: -180px;
+  }
+}
+
+/* Contenedor Elsa izquierda */
+.nieve-container.izquierda {
+  position: fixed;
+  bottom: 150px; /* altura aproximada de sus manos */
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0;
+  animation: apareceConElsaIzq 8s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* Contenedor Elsa derecha */
+.nieve-container.derecha {
+  position: fixed;
+  bottom: 150px; /* altura aproximada de sus manos */
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0;
+  animation: apareceConElsaDer 8s ease-in-out infinite;
+}
+
+/* Copitos izquierda */
+.nieve-container.izquierda .copito {
+  position: absolute;
+  bottom: -60px;
+  left: 65px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: lanzarNieveIzq 1s ease-out infinite;
+  animation-fill-mode: both;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(173, 216, 230, 0.5);
+}
+
+
+/* Copitos derecha */
+.nieve-container.derecha .copito {
+  position: absolute;
+  bottom: -60px;
+  right: 65px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: lanzarNieveDer 1s ease-out infinite;
+  animation-fill-mode: both;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(173, 216, 230, 0.5);
+}
+
+
+/* delays para ráfaga tipo AK-47 - muy rápido y continuo */
+.copito:nth-child(1) { animation-delay: 0s; }
+.copito:nth-child(2) { animation-delay: 0.04s; }
+.copito:nth-child(3) { animation-delay: 0.08s; }
+.copito:nth-child(4) { animation-delay: 0.12s; }
+.copito:nth-child(5) { animation-delay: 0.16s; }
+.copito:nth-child(6) { animation-delay: 0.2s; }
+.copito:nth-child(7) { animation-delay: 0.24s; }
+.copito:nth-child(8) { animation-delay: 0.28s; }
+.copito:nth-child(9) { animation-delay: 0.32s; }
+.copito:nth-child(10) { animation-delay: 0.36s; }
+.copito:nth-child(11) { animation-delay: 0.4s; }
+.copito:nth-child(12) { animation-delay: 0.44s; }
+.copito:nth-child(13) { animation-delay: 0.48s; }
+.copito:nth-child(14) { animation-delay: 0.52s; }
+.copito:nth-child(15) { animation-delay: 0.56s; }
+.copito:nth-child(16) { animation-delay: 0.6s; }
+.copito:nth-child(17) { animation-delay: 0.64s; }
+.copito:nth-child(18) { animation-delay: 0.68s; }
+.copito:nth-child(19) { animation-delay: 0.72s; }
+.copito:nth-child(20) { animation-delay: 0.76s; }
+.copito:nth-child(21) { animation-delay: 0.8s; }
+.copito:nth-child(22) { animation-delay: 0.84s; }
+.copito:nth-child(23) { animation-delay: 0.88s; }
+.copito:nth-child(24) { animation-delay: 0.92s; }
+.copito:nth-child(25) { animation-delay: 0.96s; }
+
+/* Animación izquierda → ráfaga hacia la derecha y arriba */
+@keyframes lanzarNieveIzq {
+  0%   { 
+    transform: translateY(0) translateX(0) scale(0) rotate(0deg); 
+    opacity: 0; 
+  }
+  5%  { 
+    opacity: 1; 
+    transform: translateY(-5px) translateX(5px) scale(1) rotate(45deg); 
+  }
+  25%  { 
+    transform: translateY(-40px) translateX(60px) scale(1.2) rotate(180deg); 
+    opacity: 1; 
+  }
+  50%  { 
+    transform: translateY(-100px) translateX(140px) scale(0.9) rotate(360deg); 
+    opacity: 0.8; 
+  }
+  75%  { 
+    transform: translateY(-180px) translateX(220px) scale(0.5) rotate(540deg); 
+    opacity: 0.4; 
+  }
+  100% { 
+    transform: translateY(-280px) translateX(300px) scale(0.2) rotate(720deg); 
+    opacity: 0; 
+  }
+}
+
+/* Animación derecha → ráfaga hacia la izquierda y arriba */
+@keyframes lanzarNieveDer {
+  0%   { 
+    transform: translateY(0) translateX(0) scale(0) rotate(0deg); 
+    opacity: 0; 
+  }
+  5%  { 
+    opacity: 1; 
+    transform: translateY(-5px) translateX(-5px) scale(1) rotate(-45deg); 
+  }
+  25%  { 
+    transform: translateY(-40px) translateX(-60px) scale(1.2) rotate(-180deg); 
+    opacity: 1; 
+  }
+  50%  { 
+    transform: translateY(-100px) translateX(-140px) scale(0.9) rotate(-360deg); 
+    opacity: 0.8; 
+  }
+  75%  { 
+    transform: translateY(-180px) translateX(-220px) scale(0.5) rotate(-540deg); 
+    opacity: 0.4; 
+  }
+  100% { 
+    transform: translateY(-280px) translateX(-300px) scale(0.2) rotate(-720deg); 
+    opacity: 0; 
+  }
+}
+
+/* Sincronizar nieve con aparición de Elsa derecha */
+@keyframes apareceConElsaDer {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Sincronizar nieve con aparición de Elsa izquierda */
+@keyframes apareceConElsaIzq {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Update the decoracion styles */
+.decoracion {
+  position: fixed;
+  top: 10px;
+  font-size: 2rem;
+  pointer-events: none;
+  display: flex;
+  gap: 8px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.esquina-izq { 
+  left: 10px; 
+  transform: rotate(-5deg);
+}
+
+.esquina-der { 
+  right: 10px; 
+  transform: rotate(5deg);
+}
+
+.decoracion span {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Individual emoji animations */
+.decoracion span:nth-child(1) {
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.decoracion span:nth-child(2) {
+  animation: flotar 3s ease-in-out infinite 0.5s;
+}
+
+.decoracion span:nth-child(3) {
+  animation: flotar 3s ease-in-out infinite 1s;
+}
+
+/* Enhanced floating animation */
+@keyframes flotar {
+  0% { 
+    transform: translateY(0) rotate(0deg); 
+    filter: brightness(1);
+  }
+  50% { 
+    transform: translateY(-8px) rotate(5deg); 
+    filter: brightness(1.2);
+  }
+  100% { 
+    transform: translateY(0) rotate(0deg); 
+    filter: brightness(1);
+  }
+}
+
+/* Hover effects */
+.decoracion:hover span {
+  transform: scale(1.2);
+}
+
+.decoracion span:hover {
+  transform: scale(1.4) rotate(15deg) !important;
+  cursor: pointer;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkleUp 1.5s ease-out forwards;
+}
+
+@keyframes sparkleUp {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Custom snowflake cursor */
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2v20M2 12h20M6 6l12 12M6 18L18 6"/></svg>'), auto;
+}
+
+button {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2v20M2 12h20M6 6l12 12M6 18L18 6"/></svg>'), pointer;
+}

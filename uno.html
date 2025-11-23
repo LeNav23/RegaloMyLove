@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNO</title>
+    <link rel="stylesheet" href="CSS/uno.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="fondo-uno">
+        <!-- Intro message -->
+        <div id="intro-message" class="active">
+            <h1>Uno Challenge</h1>
+            <p>Ganame en Uno y te devuelvo a Leosito, aunque no podrás porque soy el mejor en Uno >:)</p>
+            <button id="start-btn">Comenzemos</button>
+        </div>
+
+        <!-- Game container -->
+        <div id="game-container">
+            <div id="game-header">
+                <div id="turn-indicator">Tu turno</div>
+            </div>
+
+            <!-- Bot's hand (cards hidden) -->
+            <div id="bot-area">
+                <img src="imgs/thief.png" alt="Thief" class="character-avatar thief-avatar" id="thief-small">
+                <img src="imgs/Leox4.png" alt="Leo captured" class="leo-in-hands" id="leo-small">
+                <div class="player-info">
+                    <span class="player-name">Ladron</span>
+                    <span id="bot-card-count" class="card-count">7 cards</span>
+                </div>
+                <div id="bot-hand" class="hand"></div>
+            </div>
+
+            <!-- Game board (center) -->
+            <div id="game-board">
+                <div id="draw-pile" class="pile">
+                    <div class="card card-back">UNO</div>
+                </div>
+                <div id="discard-pile" class="pile">
+                    <div id="current-card" class="card"></div>
+                </div>
+                <div id="game-info">
+                    <p>Color: <span id="current-color"></span></p>
+                </div>
+            </div>
+
+            <!-- Player's hand -->
+            <div id="player-area">
+                <img src="imgs/Nikki3.png" alt="Player" class="character-avatar player-avatar">
+                <div class="player-info">
+                    <span class="player-name">Nikoru</span>
+                    <span id="player-card-count" class="card-count">7 cards</span>
+                </div>
+                <div id="player-hand" class="hand"></div>
+            </div>
+        </div>
+
+        <!-- Color picker modal -->
+        <div id="color-picker" class="modal">
+            <div class="modal-content">
+                <h3>Escoge un color:</h3>
+                <div class="color-options">
+                    <button class="color-btn red" data-color="red">Rojo</button>
+                    <button class="color-btn yellow" data-color="yellow">Amarillo</button>
+                    <button class="color-btn green" data-color="green">Verde</button>
+                    <button class="color-btn blue" data-color="blue">Azul</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Victory message -->
+        <div id="victory-message">
+            <div class="victory-scene">
+                <img src="imgs/Nikki10.png" alt="Nikki punch" class="nikki-punch" id="nikki-punch">
+                <img src="imgs/thief.png" alt="Thief defeated" class="thief-defeated">
+                <img src="imgs/Leox4.png" alt="Leo" class="leo-victory" id="leo-victory">
+                <img src="imgs/Leox6.png" alt="Leo happy" class="leo-happy" id="leo-happy">
+                <div class="heart heart-1">❤️</div>
+                <div class="heart heart-2">❤️</div>
+                <div class="heart heart-3">❤️</div>
+                <div class="victory-dialogue" id="victory-dialogue">
+                    <p id="dialogue-text"></p>
+                    <button class="continue-btn" id="continue-btn" style="display: none;">Continuar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Defeat message -->
+        <div id="defeat-message">
+            <div class="thief-escape-scene">
+                <img src="imgs/thief.png" alt="Thief" class="thief-escape">
+                <img src="imgs/Leox5.png" alt="Leo captured" class="leo-escape">
+                <div class="thief-dialogue">
+                    <p>JAJAJAJ fallaste! Leosito es mio para siempre!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/uno.js"></script>
+</body>
+</html>
