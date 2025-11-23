@@ -673,6 +673,8 @@ body.celebration-mode {
     bottom: -50px;
     animation: floatUp 6s ease-in forwards;
     filter: drop-shadow(0 0 5px rgba(255, 20, 147, 0.6));
+    color: #FF1493;
+    font-weight: bold;
 }
 
 @keyframes floatUp {
